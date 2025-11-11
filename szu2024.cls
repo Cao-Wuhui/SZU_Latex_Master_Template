@@ -216,7 +216,7 @@
 	\fancyfoot[C]{\songti\zihao{5}{\thepage}}
       \phantomsection % 添加超链接的目标位置
 	\hypertarget{szuAppendixB}{} % 设置超链接的目标位置
-	\addcontentsline{toc}{\newContects}{\textcolor{black}{\underline{\textbf{#1}}}} % 在目录中显示附\zihao{-4}
+	\addcontentsline{toc}{\newContects}{\textcolor{black}{\textbf{#1}}} % 在目录中显示附\zihao{-4}
 	\vspace{1\baselineskip}	
 	\begin{center}
         \songti\zihao{3}{\textbf{~\\}}
