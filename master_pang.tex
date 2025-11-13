@@ -114,6 +114,12 @@
 %封面 自行配置生成pdf文件导入即可
 \includepdf[pages={1,2}]{chapter/masterPage.pdf}
 	
+% 全局页眉页脚：确保摘要等多页内容的后续页保持 fancy 样式
+% 解决 issue: https://github.com/Ftine/SZU_Latex_Master_Template/issues/19
+\pagestyle{fancy}
+\fancyhead[C]{\songti\zihao{5}{\titleCN}}
+\fancyhead[C]{\songti\zihao{5}{\titleEN}}
+	
 %中英文摘要 以及 缩写表
 \input{chapter/abstract.tex} 
 	
