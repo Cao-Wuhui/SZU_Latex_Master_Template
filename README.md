@@ -103,7 +103,7 @@
 
 ### 使用教程
 
-下载该文件zip导入到相关的latex编辑工具即可，推荐使用overleaf，请注意更改编译器为XeLaTex。
+下载该文件zip导入到相关的latex编辑工具即可，推荐使用overleaf，请注意更改编译器为XeLaTeX。
 
 ### 删除内容
 
