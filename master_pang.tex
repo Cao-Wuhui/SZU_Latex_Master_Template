@@ -197,10 +197,23 @@
 \fancyfoot[C]{\songti\zihao{5}{\thepage}}
 \input{chapter/myPapers.tex}
 
-\end{document}
-
-% 源代码地址：https://github.com/Ftine/SZU_Latex_Master_Template
+% 添加学术评语目录条目
+%\addtocontents{toc}{\protect\vspace{1.6pt}}
+%\addtocontents{toc}{\noindent\protect\fontspec{songti-Bold.otf}\protect\zihao{-4}\protect\normalfont 附：指导教师对研究生学位论文的学术评语\par}
+% 添加答辩决议书目录条目
+%\addtocontents{toc}{\protect\vspace{1.6pt}}
+%\addtocontents{toc}{\noindent\protect\fontspec{songti-Bold.otf}\protect\zihao{-4}\protect\normalfont ~~~~~~~~答辩委员会决议书\par}
+% 添加学术评语页面
+%\clearpage
+%\includepdf[pages={1}]{chapter/comment.pdf}
+% 添加答辩决议书页面
+%\clearpage
+%\includepdf[pages={1,2}]{chapter/decision.pdf}
 
 %当需要在论文末尾插入相关的文件，可以生成pdf文件格式进行附加，附加一页就是1，多页就是1，2，3
 %\includepdf[pages={1}]{chapter/comment.pdf}
 %\includepdf[pages={1}]{chapter/decision.pdf}
+
+\end{document}
+
+% 源代码地址：https://github.com/Ftine/SZU_Latex_Master_Template
