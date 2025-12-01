@@ -8,10 +8,27 @@
 
 \vspace{0.3\baselineskip} 
 
-\noindent{[1]~ \textbf{xxxx}, xxxx, xxxx. xxxx.（SCI收录,对应学位论文第三章）}
+{
+\newcounter{pubctr} % 自定义新计数器
+\newenvironment{publist}{%%%%% 定义新环境
+\begin{list}{[\arabic{pubctr}]} %% 标签格式
+    {
+     \usecounter{pubctr}
+     \setlength{\leftmargin}{2em}     % 左边界 \leftmargin =\itemindent + \labelwidth + \labelsep
+     \setlength{\itemindent}{0em}     % 标号缩进量
+     \setlength{\labelsep}{1em}       % 标号和列表项之间的距离,默认0.5em
+     \setlength{\rightmargin}{0em}    % 右边界
+     \setlength{\topsep}{0ex}         % 列表到上下文的垂直距离
+     \setlength{\parsep}{0ex}         % 段落间距
+     \setlength{\itemsep}{0ex}        % 标签间距
+     \setlength{\listparindent}{0pt} % 段落缩进量
+    }}
+{\end{list}}%%%%%
 
+\begin{publist}
+    \item \textbf{Yuanshen}, Yuanshen1, Yuanshen2. Wo ai wan yuan shen 666. SZU Conference of Yuanshen (SZUCY) 2025. （SCI收录,对应学位论文第三章）
+\end{publist}
+}
 
-    % \noindent{
-    % [2]~ ***, ***, ***, ***, \textbf{***}. xxxxxx[J].xxxxx, 2022, 252: 109310.(SCI一区，第四作者) }
     
 \end{szuAppendixB}
