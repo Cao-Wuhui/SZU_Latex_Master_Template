@@ -1,0 +1,25 @@
+\begin{signAndABC}
+
+\begin{adjustwidth}{-\leftskip}{0pt}
+    % 调整表格宽度
+\renewcommand\arraystretch{1.5}
+\begin{tabular}{l@{\hspace{4em}}l}
+VAE & 变分自编码器（Variational Auto-Encoder） \\
+CNN & 卷积神经网络（Convolutional Neural Network）
+\end{tabular}
+\end{adjustwidth}
+
+\end{signAndABC}
+
+%此处为原cls文件中有关后续正文页面的页眉页脚设置
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy} % 页眉横线样式
+\fancyhead{}
+
+\fancyhead[C]{\songti\zihao{5}{\titleCN}}
+% 全局页眉 设置为章节标题
+\fancyhead[C]{\songti\zihao{5}\nouppercase\leftmark}
+%全局页号设置
+\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+\setcounter{page}{1}

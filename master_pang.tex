@@ -123,13 +123,14 @@
 \fancyhead[C]{\songti\zihao{5}{\titleCN}}
 \fancyhead[C]{\songti\zihao{5}{\titleEN}}
 	
-%中英文摘要 以及 缩写表
+%中英文摘要
 \input{chapter/abstract.tex} 
 	
 \setlength{\baselineskip}{23pt} %设置行距23磅
 	
 \tableofcontents	%目录
-	
+%缩略语及后续正文页眉页脚设置
+\input{chapter/sign_and_ABC.tex}
 %%%%%%%%% 图索引和表索引
 % \renewcommand\listfigurename{\songti\zihao{2}{\textbf{图~~目~~录}}}
 % \renewcommand\listtablename{\songti\zihao{2}{\textbf{表~~目~~录}}}

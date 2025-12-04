@@ -78,18 +78,8 @@
 %//相关设置
 \renewcommand{\tableofcontents}{%
 	\pagestyle{plain}
-	\savedtableofcontents
-	\newpage
-	\pagenumbering{arabic}
-	\pagestyle{fancy} % 页眉横线样式
-	\fancyhead{}
- 
-    \fancyhead[C]{\songti\zihao{5}{\titleCN}}
-% 全局页眉 设置为章节标题
-\fancyhead[C]{\songti\zihao{5}\nouppercase\leftmark}
-%全局页号设置
-\fancyfoot[C]{\songti\zihao{5}{\thepage}}
-\setcounter{page}{1}
+	\savedtableofcontents	
+	%将有关正文页面的设置移到缩略语插入后
 }
 
 %参考文献样式
