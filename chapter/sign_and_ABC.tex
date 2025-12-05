@@ -3,23 +3,48 @@
 \begin{adjustwidth}{-\leftskip}{0pt}
     % 调整表格宽度
 \renewcommand\arraystretch{1.5}
-\begin{tabular}{l@{\hspace{4em}}l}
-VAE & 变分自编码器（Variational Auto-Encoder） \\
-CNN & 卷积神经网络（Convolutional Neural Network）
-\end{tabular}
+\begin{longtable}{l@{\hspace{4em}}p{10.5cm}}
+    %第一页表头设置
+    \endfirsthead
+    %后续页表头设置
+    \endhead
+    %非最后一页表尾设置
+    \endfoot 
+    %最后一页表尾设置
+    \endlastfoot
+
+    VAE & 变分自编码器（Variational Auto-Encoder） \\
+    CNN & 卷积神经网络（Convolutional Neural Network） \\
+    GAN & 生成对抗网络（Generative Adversarial Network） \\
+    RNN & 循环神经网络（Recurrent Neural Network） \\
+    LSTM & 长短期记忆网络（Long Short-Term Memory） \\
+    ReLU & 整流线性单元（Rectified Linear Unit） \\
+    NLP & 自然语言处理（Natural Language Processing） \\
+    CV & 计算机视觉（Computer Vision） \\
+    RL & 强化学习（Reinforcement Learning） \\
+    A*T & 注意力机制（Attention Mechanism） \\
+    SGD & 随机梯度下降（Stochastic Gradient Descent） \\
+    ADAM & 自适应矩估计（Adaptive Moment Estimation） \\
+    BERT & 来自 Transformer 的双向编码器表示（Bidirectional Encoder Representations from Transformers） \\
+    GPT & 生成式预训练 Transformer（Generative Pre-trained Transformer） \\
+    MLP & 多层感知器（Multilayer Perceptron） \\
+    SVM & 支持向量机（Support Vector Machine） \\
+    K-NN & K-近邻算法（K-Nearest Neighbors） \\
+    PCA & 主成分分析（Principal Component Analysis） \\
+    DL & 深度学习（Deep Learning） \\
+    HMM & 隐马尔可夫模型（Hidden Markov Model） \\
+    VGG & 牛津大学视觉几何组（Visual Geometry Group） \\
+    ResNet & 残差网络（Residual Network） \\
+    IoU & 交并比（Intersection over Union） \\
+    mAP & 平均精度均值（Mean Average Precision） \\
+    FPN & 特征金字塔网络（Feature Pyramid Network） \\
+    DBSCAN & 基于密度的带噪声空间聚类应用（Density-Based Spatial Clustering of Applications with Noise） \\
+    GCN & 图卷积网络（Graph Convolutional Network） \\
+    RLHF & 人类反馈强化学习（Reinforcement Learning from Human Feedback） \\
+    LLM & 大语言模型（Large Language Model） \\
+    FLOPs & 浮点运算次数（Floating Point Operations） \\
+\end{longtable}
 \end{adjustwidth}
 
 \end{signAndABC}
 
-%此处为原cls文件中有关后续正文页面的页眉页脚设置
-\newpage
-\pagenumbering{arabic}
-\pagestyle{fancy} % 页眉横线样式
-\fancyhead{}
-
-\fancyhead[C]{\songti\zihao{5}{\titleCN}}
-% 全局页眉 设置为章节标题
-\fancyhead[C]{\songti\zihao{5}\nouppercase\leftmark}
-%全局页号设置
-\fancyfoot[C]{\songti\zihao{5}{\thepage}}
-\setcounter{page}{1}
