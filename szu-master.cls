@@ -163,7 +163,9 @@
 % 定义符号和缩略语说明
 \newenvironment{signAndABC}{
 	\newpage
-	\thispagestyle{fancy}
+	% \thispagestyle{fancy}
+	%含有this样式仅当前页，表格跨页后页眉消失，改为去掉this后续页页眉正常显示
+	\pagestyle{fancy}
 	\fancyhead[C]{\songti\zihao{5}{符号和缩略语说明}}
 	\fancyfoot[C]{\songti\zihao{5}{\thepage}}
      \phantomsection % 添加超链接的目标位置
