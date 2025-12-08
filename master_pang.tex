@@ -7,7 +7,9 @@
 % 文本
 \usepackage{ctex}
 \usepackage{fancyhdr}
-
+%可跨页表格引入
+\usepackage{longtable}
+\usepackage{lastpage}
 % dgq package
 \usepackage{makecell}
 
@@ -129,8 +131,23 @@
 \setlength{\baselineskip}{23pt} %设置行距23磅
 	
 \tableofcontents	%目录
-%缩略语及后续正文页眉页脚设置
+
+%缩略语
 \input{chapter/sign_and_ABC.tex}
+
+%此处为原cls文件中有关后续正文页面的页眉页脚设置
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy} % 页眉横线样式
+\fancyhead{}
+
+\fancyhead[C]{\songti\zihao{5}{\titleCN}}
+% 全局页眉 设置为章节标题
+\fancyhead[C]{\songti\zihao{5}\nouppercase\leftmark}
+%全局页号设置
+\fancyfoot[C]{\songti\zihao{5}{\thepage}}
+\setcounter{page}{1}
+
 %%%%%%%%% 图索引和表索引
 % \renewcommand\listfigurename{\songti\zihao{2}{\textbf{图~~目~~录}}}
 % \renewcommand\listtablename{\songti\zihao{2}{\textbf{表~~目~~录}}}
