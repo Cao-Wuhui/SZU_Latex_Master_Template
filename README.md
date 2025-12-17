@@ -2,7 +2,7 @@
 
 > 模板源文件来自深圳大学计算机与软件学院历年流传下的模板内容进行修改，
 > 
-> 最初根据学校2024年最新模板修改编辑完成，
+> 最初根据学校 2024 年最新模板修改编辑完成，
 >
 > 在所有用户的帮助下持续迭代。
 
@@ -21,34 +21,16 @@
 本项目保留了先前贡献者的提交记录，感谢[上游项目](https://github.com/Ftine/SZU_Latex_Master_Template)的贡献。
 
 ------
-### 2025-3-11 更新 合并 @nnothing1 用户 对于 #17 的 Issue 处理
-
->- 目前个人问题，针对各位提出的Issues无时间处理，请见谅
->- 后续模板应该不会再进行更新和修改，也请原谅
->- 若存在相关问题的提问和错误，可以提交Issues与各位优秀的人交流
->- 若该模板能帮助各位，是在下荣幸，谢谢各位！
->- 在此祝各位毕业顺利、前途无量
-
-
 ### 2024-5-23 更新 目录增加附录格式表达
 
-> 在 master_pang.tex主文件中的 \end{document} 之前插入。 也就是末尾。注意 后续插入相关的pdf文件也应该要在这个 \end{document} 之前。
+> 在 master_pang.tex 主文件中的 \end{document} 之前插入（即，末尾）。 注意：后续插入相关的 pdf 文件也应该要在这个 \end{document} 之前。
 >```tex
 >% 在目录中添加一段文本
 >\addtocontents{toc}{\noindent 附：指导教师对研究生学位论文的学术评语\par}
 >\addtocontents{toc}{答辩委员会决议书\par}
 >```
 
-
-
-### 2024-4-1重大更新
-
->**对标题和目录字体进行修改，`gbt7714-2005.bst`,`szu-master.cls`、`master_pang.tex`文件有较大更改** 
->
->- 建议直接复制替换 szu-master.cls 文件
->- 建议直接复制替换 master_pang.tex 文件
->- 下载和替换 gbt7714-2005.bst
->- 下载 songti-Bold.otf 文件
+### 2024-4-1重大更新 对标题和目录字体进行修改
 
 ### <u>部分更新说明</u> ---仅保留部分重要问题 
 
@@ -80,14 +62,12 @@
 
 - **参考文献问题**会议和期刊卷码`volume`格式存在不统一、以及存在期刊名称大小写不一致问题，可以手动修改。
 
-> 该部分错误来源于Bib引用本身的问题，引用会存在不一致，若需要修改。
+> 该部分错误来源于 Bib 引用本身的问题，引用会存在不一致，若需要修改。
 >
 > 1. `volume` 参考 Issues#11修正 @**[ZFNSQM](https://github.com/ZFNSQM)** 用户的回答。 [参考文献格式问题 · Issue #11 · Ftine/SZU_Latex_Master_Template (github.com)](https://github.com/Ftine/SZU_Latex_Master_Template/issues/11)
 > 2. 期刊名称大小写不一致问题是指 一些期刊为 `Axxx,xxx,xxx` 一些为 `Bxxx,Cxxxxx,Dxxxxx`,可以在Bib引用中手动修改完成
 
 -  **参考文献格式** 提示修改，学校引用格式由`gbt7714-2005`更新为`gbt7714-2015`格式 , 根据@**[modest-Hamilton](https://github.com/modest-Hamilton)** 在Issue#11中的分享。
-   - ​	仍建议使用gbt7714-2005格式，源代码提供的样式。
-
 
 >- 添加两个引用格式文件 gbt7714.sty 以及 gbt7714-numerical.bst ，修改 master_pang.tex中引用格式
 >
@@ -98,21 +78,21 @@
 >\bibliographystyle{gbt7714-numerical} 
 >```
 >
->**请注意会出现arXiv文章引用错误，无法显示arXiv等编号**
+>**请注意会出现 arXiv 文章引用错误，无法显示arXiv等编号，故，仍建议使用 gbt7714-2005 格式**
 >
->> 若需要使用 ， arXIv的问题应该需要去arxiv官网导出[@misc](https://github.com/misc)格式的bibtex
+>> 若需要使用 ， arXiv 的问题应该需要去 arXiv 官网导出[@misc](https://github.com/misc)格式的bibtex
 
 ### 使用教程
 
-下载该文件zip导入到相关的latex编辑工具即可，推荐使用overleaf，请注意更改编译器为XeLaTeX。
+下载该文件 zip 导入到相关的 latex 编辑工具即可，推荐使用 Overleaf，请注意更改编译器为 `XeLaTeX`。
 
 ### 删除内容
 
-删除原始封面标题以及相关承诺的两页，直接使用来自SZU官方的最新模板页【生成PDF文件然后导入到论文首页】
+本项目删除了原始封面标题+相关承诺的 2 页，请直接使用来自 SZU 官方的最新模板页【生成PDF文件然后导入到论文首页】
 
 ### 不足
 
-- 每一章节的大标题上下留白没有跟学校模板一致
+- 每一章节中，大标题上下留白的大小与学校模板稍有区别
 
 ### 贡献指南
 
