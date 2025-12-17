@@ -82,6 +82,8 @@
 >
 >> 若需要使用 ， arXiv 的问题应该需要去 arXiv 官网导出[@misc](https://github.com/misc)格式的bibtex
 
+------
+
 ### 使用教程
 
 下载该文件 zip 导入到相关的 latex 编辑工具即可，推荐使用 Overleaf，请注意更改编译器为 `XeLaTeX`。
