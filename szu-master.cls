@@ -55,7 +55,8 @@
 }
 
 
-
+%设置标题编号深度
+\setcounter{secnumdepth}{4}
 %设置目录树显示深度
 \setcounter{tocdepth}{3}
 
@@ -243,6 +244,8 @@
 
 \titleformat{\subsubsection}{\zihao{4}\bfseries\fontspec{songti-Bold.otf}}{\thesubsubsection}{1em}{}
 
+%定义四级标题样式
+\titleformat{\paragraph}{\zihao{-4}\bfseries\fontspec{songti-Bold.otf}}{\theparagraph}{1em}{}
 
 % 定义目录标题样式
 \titlecontents{section}[0em]{\bfseries\fontspec{songti-Bold.otf}\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
