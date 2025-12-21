@@ -6,6 +6,7 @@
 >
 > 在所有用户的帮助下持续迭代。
 
+- 增加 4 级标题 [https://github.com/Cao-Wuhui/SZU_Latex_Master_Template/issues/14#issue-3737724452](https://github.com/Cao-Wuhui/SZU_Latex_Master_Template/pull/16#issue-3746788604)（2025.12.21）
 - 完成研究成果更改（2025.12.20）
 - 完成摘要更改
 - 完成目录更改
