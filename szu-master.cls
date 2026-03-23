@@ -26,7 +26,6 @@
 \renewcommand{\thetable}{\arabic{table}}   %图表的计数方式
 
 
-%\renewcommand{\contentsname}{\heiti\zihao{3}{\textbf{目~录}\vspace{1\baselineskip}}}
 \renewcommand{\contentsname}{\heiti\zihao{3}{\textbf{目~录}\vspace{6pt}}}
 
 \renewcommand\refname{\heiti\zihao{-3}{\textbf{参~考~文~献}}}
@@ -83,57 +82,27 @@
 %//相关设置
 \renewcommand{\tableofcontents}{%
 	\pagestyle{plain}
-	\savedtableofcontents
-	\newpage
-	\pagenumbering{arabic}
-	\pagestyle{fancy} % 页眉横线样式
-	\fancyhead{}
- 
-    \fancyhead[C]{\songti\zihao{5}{\titleCN}}
-% 全局页眉 设置为章节标题
-\fancyhead[C]{\songti\zihao{5}\nouppercase\leftmark}
-%全局页号设置
-\fancyfoot[C]{\songti\zihao{5}{\thepage}}
-\setcounter{page}{1}
+	\savedtableofcontents	
+	%将有关正文页面的设置移到缩略语插入后
 }
 
 %参考文献样式
 
 \let\savedbibliographystyle\bibliographystyle
 \renewcommand{\bibliographystyle}[1]{
-%	\vspace{68pt}
 	\newpage
         %中文字体
         \phantomsection % 添加超链接的目标位置
-%    \vspace{68pt}
 	\hypertarget{references}{}     % 设置超链接的目标位置
-%	\vspace{68pt}
         \setstretch{1.25}
-%        \vspace{68pt}
         \addcontentsline{toc}{\newContects}{\songti\textbf{参考文献}} % \zihao{-4}        
-%        \vspace{68pt}
-        \songti\zihao{5}
-        
-%            % 添加参考文献标题前的间距
-%        \vspace{24pt}  % 例如：24磅
-%        
-%        \refname  % 显示参考文献标题
-%        
-%        % 添加参考文献标题后的间距
-%        \vspace{18pt}  % 例如：18磅
-             
-        \savedbibliographystyle{#1}
-%        \vspace{68pt}
-%        \heiti\zihao{3}{\textbf{~\\}}
-%        {\centering\linespread{1.0}\heiti\zihao{3}{\textbf{摘~~要}}\par
-%        }        
-        
+        \songti\zihao{5}      
+        \savedbibliographystyle{#1}  
 }
 
 % 中文摘要
 \newenvironment{abstractCN}{
 	\newpage
-%	\vspace{0pt}
     \pagenumbering{Roman}
 	\thispagestyle{fancy}
 	\fancyhead[C]{\songti\zihao{5}{\titleCN}}
@@ -142,19 +111,11 @@
         \phantomsection % 添加超链接的目标位置
 	\hypertarget{abstractCN}{} % 设置超链接的目标位置
 	\addcontentsline{toc}{\newContects}{\songti\textbf{摘~要}} % 在目录中显示摘要
-%	\vspace{1\baselineskip}
-%	\vspace*{5pt}
-%	\begin{center}
-%        % {\heiti\zihao{3}
-%		\heiti\zihao{3}{\textbf{~\\}}
-%		\heiti\zihao{3}{\textbf{摘~~要}}
-%	\end{center}
-%	\vspace{1\baselineskip}
 
-\heiti\zihao{3}{\textbf{~\\}}
-{\centering\linespread{1.0}\heiti\zihao{3}{\textbf{摘~~要}}\par
-}
-\vspace{18pt}
+	\heiti\zihao{3}{\textbf{~\\}}
+	{\centering\linespread{1.0}\heiti\zihao{3}{\textbf{摘~~要}}\par
+	}
+	\vspace{18pt}
 
 	\songti\zihao{-4}
 }{}
@@ -181,17 +142,11 @@
 	\hypertarget{abstractEN}{} % 设置超链接的目标位置
 	%\addcontentsline{toc}{\newContects}{\textbf{ABSTRACT}} %\zihao{-4}% 在目录中显示摘要
 	\addcontentsline{toc}{\newContects}{\textbf{\textrm{ABSTRACT}}} %
-%	\vspace{1\baselineskip}	
-%	\begin{center}
-%		\songti\zihao{3}{\textbf{~\\}}
-%		\setmainfont{Arial}{\zihao{3}{\textbf{ABSTRACT}} }	
-%	\end{center}
-%	\vspace{1\baselineskip}
 
-\heiti\zihao{3}{\textbf{~\\}}
-{\centering\linespread{1.0}\setmainfont{Arial}{\zihao{3}{\textbf{ABSTRACT}} }\par
-}
-\vspace{18pt}
+	\heiti\zihao{3}{\textbf{~\\}}
+	{\centering\linespread{1.0}\setmainfont{Arial}{\zihao{3}{\textbf{ABSTRACT}} }\par
+	}
+	\vspace{18pt}
 
 	\songti\zihao{-4}
 }{}
@@ -219,13 +174,6 @@
 	\hypertarget{signAndABC}{} % 设置超链接的目标位置
 	\addcontentsline{toc}{\newContects}{\textbf{符号和缩略语说明}} % 在目录中显示摘要\zihao{-4}
 	
-%	\vspace{1\baselineskip}	
-%	\begin{center}
-%		\songti\zihao{3}{\textbf{~\\}}
-%		{\heiti\zihao{3}{\textbf{符号和缩略语说明}} }	
-%	\end{center}
-%	\vspace{1\baselineskip}
-	
 	\heiti\zihao{3}{\textbf{~\\}}
 	{\centering\linespread{1.0}\heiti\zihao{3}{\textbf{符号和缩略语说明}}\par
 	}
@@ -241,13 +189,6 @@
        \phantomsection % 添加超链接的目标位置
 	\hypertarget{szuAppendix}{} % 设置超链接的目标位置
 	\addcontentsline{toc}{\newContects}{\textbf{致~谢}} % 在目录中显示附录 \zihao{-4}
-	
-%	\vspace{1\baselineskip}	
-%	\begin{center}
-%        \songti\zihao{3}{\textbf{~\\}}
-%        \heiti\bfseries\zihao{3}{#1}
-%	\end{center}
-%	\vspace{0.5\baselineskip}
 
 	\heiti\zihao{3}{\textbf{~\\}}
 	{\centering\linespread{1.0}\heiti\bfseries\zihao{3}{#1}\par
@@ -269,13 +210,6 @@
       \phantomsection % 添加超链接的目标位置
 	\hypertarget{szuAppendixB}{} % 设置超链接的目标位置
 	\addcontentsline{toc}{\newContects}{\textcolor{black}{\textbf{#1}}} % 在目录中显示附\zihao{-4}
-	
-%	\vspace{1\baselineskip}	
-%	\begin{center}
-%        \songti\zihao{3}{\textbf{~\\}}
-%        \heiti\bfseries\zihao{3}{#1}
-%	\end{center}
-%	\vspace{0.5\baselineskip}
 	
 	\heiti\zihao{3}{\textbf{~\\}}
 	{\centering\linespread{1.0}\heiti\bfseries\zihao{3}{#1}\par
@@ -300,7 +234,7 @@
 		section={
 				format+ = \heiti\bfseries\zihao{3}\sectionef,
 				name = {第,章},
-				number = \chinese{section},
+				number = \chinese{section}
 	}
 }	
 
@@ -321,8 +255,6 @@
 \titlecontents{subsection}[1em]{\fontspec{simsun.ttc}\zihao{-4}}{{\thecontentslabel}\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
 
 \titlecontents{subsubsection}[1.8em]{\fontspec{simsun.ttc}\zihao{-4}}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}
-
-
 
 
 \endinput
