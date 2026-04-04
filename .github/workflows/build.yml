@@ -1,0 +1,135 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: master_pang.tex
+          latexmk_use_xelatex: true
+          extra_system_packages: >-
+            font-noto-cjk
+            font-dejavu
+            fontconfig
+            curl
+            cabextract
+          extra_fonts: |
+            ./simsun.ttc
+            ./songti-Bold.otf
+            ./lucida-console.ttf
+          pre_compile: |
+            # The footnote code in master_pang.tex checks fonts in order:
+            #   Noto Sans Symbols 2 → Segoe UI Symbol → Symbola → Arial Unicode MS → DejaVu Sans
+            # Noto Sans Symbols 2 doesn't contain ①②③ (U+2460), and Symbola has
+            # stale TeX Live references that trick \IfFontExistsTF but fail to load.
+            # Remove both so the chain reaches DejaVu Sans, which has ①-⑳.
+            find /usr/share/fonts -name '*Symbols2*' -delete 2>/dev/null || true
+            find /opt/texlive -name '*Symbols2*' -delete 2>/dev/null || true
+            find /opt/texlive -name '*ymbola*' -delete 2>/dev/null || true
+
+            # Download and install Microsoft core fonts (Times New Roman, Arial)
+            (
+              mkdir -p /tmp/msfonts && cd /tmp/msfonts
+              curl -sLO "https://sourceforge.net/projects/corefonts/files/the%20fonts/final/arial32.exe"
+              curl -sLO "https://sourceforge.net/projects/corefonts/files/the%20fonts/final/times32.exe"
+              cabextract -q *.exe
+              mkdir -p /usr/share/fonts/msttcorefonts
+              find . -iname '*.ttf' -exec cp {} /usr/share/fonts/msttcorefonts/ \;
+            )
+
+            # SimHei is not available in standard Linux font repos;
+            # map it to Noto Sans CJK SC via fontconfig alias.
+            # To use the real SimHei, add simhei.ttf to the repo and extra_fonts list.
+            cat > /etc/fonts/conf.d/99-simhei-alias.conf << 'FONTCFG'
+            <?xml version="1.0"?>
+            <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+            <fontconfig>
+              <alias>
+                <family>SimHei</family>
+                <prefer><family>Noto Sans CJK SC</family></prefer>
+              </alias>
+            </fontconfig>
+            FONTCFG
+
+            fc-cache -fv
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: thesis-pdf
+          path: master_pang.pdf
+          retention-days: 90
+
+  deploy-pages:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: thesis-pdf
+
+      - name: Prepare Pages content
+        run: |
+          mkdir -p _site
+          cp master_pang.pdf _site/
+          cat > _site/index.html << 'HTML'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>SZU 硕士学位论文</title>
+            <meta http-equiv="refresh" content="0; url=master_pang.pdf">
+          </head>
+          <body>
+            <p>正在跳转至 <a href="master_pang.pdf">论文 PDF</a>…</p>
+          </body>
+          </html>
+          HTML
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: thesis-pdf
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: master_pang.pdf
+          generate_release_notes: true
