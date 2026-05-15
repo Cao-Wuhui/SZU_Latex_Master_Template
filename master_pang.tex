@@ -222,9 +222,15 @@
 \fancyhead[C]{\songti\zihao{5}{参考文献}}
 \fancyfoot[C]{\songti\zihao{5}{\thepage}}
 
+% \begin{spacing}{1.8}
+% 	\bibliographystyle{gbt7714-2005} 
+% 	\bibliography{ref_paper}
+% \end{spacing}
 \begin{spacing}{1.8}
-	\bibliographystyle{gbt7714-2005} 
-	\vspace*{-1\baselineskip}
+    \sloppy
+    \interlinepenalty=10000 %禁止在参考文献内的两行之间分页
+	\bibliographystyle{gbt7714-2005}
+    \vspace*{-1\baselineskip}
 	\bibliography{ref_paper}
 \end{spacing}
 
