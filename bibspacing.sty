@@ -16,7 +16,8 @@
             \@openbib@code
             \usecounter{enumiv}%
             \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+            \renewcommand\theenumiv{\@arabic\c@enumiv}%
+            \renewcommand{\makelabel}[1]{##1\hfil}}
       \sloppy\clubpenalty4000\widowpenalty4000%
       \sfcode`\.\@m}
      {\def\@noitemerr
