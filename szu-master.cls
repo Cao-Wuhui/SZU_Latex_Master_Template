@@ -241,7 +241,7 @@
 
 \titleformat{\subsection}{\zihao{-3}\heiti\bfseries\sectionef}{\thesubsection}{1em}{}
 
-\titleformat{\subsubsection}{\zihao{4}\bfseries\fontspec{songti-Bold.otf}}{\thesubsubsection}{1em}{}
+\titleformat{\subsubsection}{\zihao{4}\bfseries\sectionef}{\thesubsubsection}{1em}{}
 
 
 % 定义目录标题样式
@@ -250,7 +250,7 @@
 {\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
 
 %定义四级标题样式
-\titleformat{\paragraph}{\zihao{-4}\bfseries\fontspec{songti-Bold.otf}}{\theparagraph}{1em}{}
+\titleformat{\paragraph}{\zihao{-4}\bfseries\sectionef}{\theparagraph}{1em}{}
 
 %\titlecontents{section}[0em]{\bfseries\zihao{-4}}{\contentspush{\thecontentslabel\hspace{1em}}}{}{\titlerule*[0.4pc]{.}\contentspage\vspace{1.6pt}}%
 
