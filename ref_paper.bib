@@ -9,7 +9,8 @@
   publisher={北京: 机械工业出版社},
   language={zh}
 }
-#添加真实用例，以说明增加language={zh}字段的核心作用
+
+#中文文献请显式添加language={zh}，否则三作者以上会被排版为 "et al" 而非 "等"
 @article{孙志军2012深度学习研究综述,
   title={深度学习研究综述},
   author={孙志军 and 薛磊 and 许阳明 and 王正},
@@ -30,4 +31,33 @@
   pages={1--31},
   year={2017},
   publisher={PHM Society}
+}
+
+
+#硕士学位论文条目示例
+@MasterThesis{zhu1996master,
+  title={新型流体有限元法及叶轮机械正反混合问题},
+  author={朱刚},
+  school={清华大学},
+  address={北京},
+  year={1996},
+  language={zh}
+}
+
+#博士学位论文条目示例
+@PhDThesis{zhu1996phd,
+  title={新型流体有限元法及叶轮机械正反混合问题},
+  author={朱刚},
+  school={清华大学},
+  address={北京},
+  year={1996},
+  language={zh}
+}
+
+#arXiv预印本条目示例（使用谷歌学术导出）
+@article{liu2024deepseek,
+  title={Deepseek-v3 technical report},
+  author={Liu, Aixin and Feng, Bei and Xue, Bing and Wang, Bingxuan and Wu, Bochao and Lu, Chengda and Zhao, Chenggang and Deng, Chengqi and Zhang, Chenyu and Ruan, Chong and others},
+  journal={arXiv preprint arXiv:2412.19437},
+  year={2024}
 }
