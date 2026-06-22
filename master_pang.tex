@@ -214,6 +214,12 @@
 \renewcommand{\p@subfigure}{\thefigure}
 \makeatother
 
+% 设置算法编号格式为 算法1-1: 
+\renewcommand{\algorithmname}{算法}
+\renewcommand{\thealgorithm}{\thesection-\arabic{algorithm}}
+\makeatletter
+\renewcommand{\fnum@algorithm}{\algorithmname\ \thealgorithm:}
+\makeatother
 
 %adding chapters 1-5 从1开始计数
 \setcounter{page}{1}
