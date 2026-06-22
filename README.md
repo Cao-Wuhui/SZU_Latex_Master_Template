@@ -1,4 +1,4 @@
-## SZU 2026 最新版 LaTeX 硕士论文正文模板
+## SZU 最新版 LaTeX 硕士论文正文模板
 
 本模板采用自文档化设计，使用说明已嵌入[正文](https://cao-wuhui.github.io/SZU_Latex_Master_Template/master_pang.pdf)。
 
